@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 	validate :click_batey?
 
 	def click_batey?
-		if !(!title.nil? && self.title.match(/Won't Believe|Secret|Top \d+|Guess/))
+		if !(!title.nil? && title.match(/Won't Believe|Secret|Top \d+|Guess/))
 			errors.add(:title, "must be click batey")
 		end
 	end
